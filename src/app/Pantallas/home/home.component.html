@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<div class="body">
+
+    <div class="Principal">
+        <div style="font-size: 36px; color: #D169A3; margin-right: 665px; font-family: Arial, Helvetica, sans-serif;" class="Texto">Mis Cursos</div>
+        <div style="margin-bottom: 20px; font-size: 24px; margin-right: 590px; font-family: Arial, Helvetica, sans-serif;" class="Texto">Vista General del Curso</div>
+      
+        <div class="Cartas">
+          <div *ngFor="let materia of materias" class="col shadow p-0 mb-5 bg-body-tertiary rounded">
+            <button [routerLink]="['../Actividades', materia.id]" class="d-block">
+              <div class="card d-flex flex-column justify-content-center align-items-center">
+                <img [src]="materia.imagenUrl" class="card-img-top img-fluid" alt="Imagen de {{materia.nombre}}">
+                <div class="card-body">
+                  <h5 class="card-title text-center">{{ materia.nombre }}</h5>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+
+</div>
+

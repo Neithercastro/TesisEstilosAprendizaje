@@ -1,0 +1,65 @@
+body {
+  background-color: #D169A3;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Almarai', sans-serif;
+}
+
+.login-form {
+  width: 400px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2 {
+  margin-bottom: 30px;
+  font-family: 'Akshar', sans-serif;
+  font-size: 24px;
+}
+
+.form-control {
+  border: 1px solid #ced4da;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.btn-primary {
+  background-color: #FF6F91;
+  color: #ffffff;
+  border: none;
+  height: 50px;
+  font-size: 16px;
+}
+
+.btn-primary:hover {
+  background-color: #FF99B2;
+  border-color: #FF99B2;
+}
+
+
+.Links {
+  color: #FF6F91;
+  text-decoration: none;
+}
+
+.Links:hover {
+  text-decoration: underline;
+}
+
+p {
+  font-size: 14px;
+}
+
+
+
+select {
+  color: #6c757d; /* Ajusta este valor al color de texto de los otros inputs */
+}
+
+select:invalid {
+  color: #6c757d; /* Color del placeholder */
+}

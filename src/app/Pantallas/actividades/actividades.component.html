@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="body" *ngIf="Globales.Token() != null">
+
+    <div class="Principal">
+        <div style="font-size: 36px; color: #D169A3; font-family: Arial, Helvetica, sans-serif;" class="Texto">
+            {{ materiasDetalle[0]?.nombremateria }}
+        </div>
+        <div style="margin-bottom: 20px; font-size: 24px; margin-bottom: 4%; font-family: Arial, Helvetica, sans-serif;" class="Texto">
+          Actividades
+        </div>
+        <div class="Contenido">
+          <div *ngFor="let actividad of materiasDetalle" class="col shadow p-0 mb-5 bg-body-tertiary rounded">
+            <button class="card" [routerLink]="['../../ActDetalle', actividad.id]">
+              <div class="card-body">
+                <h5 class="card-title">{{ actividad.nombreactivdad }}</h5>
+                <hr>
+                <p class="card-text">Ingresar aqui la descripcion de la actividad</p>
+              </div>
+            </button>
+          </div>
+        </div>
+    </div>
+      
+   
+
+</div>

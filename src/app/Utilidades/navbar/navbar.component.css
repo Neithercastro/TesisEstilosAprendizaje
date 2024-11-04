@@ -1,0 +1,80 @@
+.navbar {
+    background-color: #FEFFFF;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    position: relative;
+}
+
+.Estilo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.Salir {
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.username {
+    margin-right: 10px;
+}
+
+.user-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    margin-right: 10px;
+}
+
+img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+button {
+    outline: none;
+    border: none;
+    background-color: #Ffffff;
+}
+
+.user-circle {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+  }
+  
+  /* Colores por estilo de aprendizaje */
+  .visual-color {
+    background-color: blue;
+  }
+  
+  .auditivo-color {
+    background-color: yellow;
+  }
+  
+  .lector-escritor-color {
+    background-color: purple;
+  }
+  
+  .kinestesico-color {
+    background-color: green;
+  }

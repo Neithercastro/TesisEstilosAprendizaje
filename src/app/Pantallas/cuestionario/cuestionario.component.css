@@ -1,0 +1,64 @@
+body {
+    background-color: #D169A3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 96vh;
+}
+
+.Principal{
+        background-color: #ffffff;
+        width: 75%;
+        height: 85%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 5px;
+    }
+
+    .Texto {
+        margin-left: 2.5%;
+    }
+
+    h3 {
+        font-size: 16px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        margin-top: 1.5%;
+        margin-bottom: 1%;
+    }
+
+    .col {
+        background-color: #ECDFE6;
+        width: 95%;
+        height: 75%;
+        margin-bottom: 2%;
+        overflow-x: auto;
+    }
+
+    .Contenedor_Formas{
+        margin-left: 2.5%;
+    }
+
+    .form-check {
+        margin-left: 0.5%;
+    }
+
+    .form-check-label {
+        font-size: 18px;
+    }
+
+    .Boton_Enviar {
+        background-color: #FF6F91;
+        width: 336px;
+        height: 55px;
+        text-align: center;
+        color: #ffffff;
+        border-radius: 4px;
+        border: none;
+        font-size: 16px;
+        margin-bottom: 5%;
+    }
+
+
+

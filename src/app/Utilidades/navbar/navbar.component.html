@@ -1,0 +1,18 @@
+<nav class="navbar">
+
+    <button class="Salir" (click)="cerrarSesion()"> 
+        <img src="../../../assets/Img/Salir.png">Salir
+    </button>
+
+    <div class="Estilo">
+        <span>{{usuario.nombreEstilo}}</span>
+    </div>
+
+    <div class="user-info">
+        <span *ngIf="Globales.Token() != null" class="username">{{Globales.Usuario()}}</span>
+        <div class="user-circle" [ngClass]="getEstiloColor()"></div>
+    </div>
+
+     <!-- Aquí pasas el objeto 'usuario' al componente hijo -->
+  
+</nav>
