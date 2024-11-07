@@ -6,14 +6,17 @@ import { ActividadesDetallesComponent } from './Pantallas/actividades-detalles/a
 import { CuestionarioComponent } from './Pantallas/cuestionario/cuestionario.component';
 import { HomeComponent } from './Pantallas/home/home.component';
 import { RegisterComponent } from './Pantallas/register/register.component';
+import { AuthGuard } from './auth.guard';
+import { EstiloAsignadoGuard } from './guards/estilo-asignado.guard';
+
 const routes: Routes = [
-  {path: '', component: LoginComponent},
   {path: 'Login', component: LoginComponent},
   {path: 'Registro', component: RegisterComponent},
-  {path: 'Home', component: HomeComponent},
-  {path: 'Actividades/:id', component: ActividadesComponent},
-  {path: 'ActDetalle/:id', component: ActividadesDetallesComponent},
-  {path: 'Cuestionario', component: CuestionarioComponent},
+  {path: 'Home', component: HomeComponent, canActivate: [AuthGuard]},
+  {path: 'Actividades/:id', component: ActividadesComponent, canActivate: [AuthGuard]},
+  {path: 'ActDetalle/:id', component: ActividadesDetallesComponent, canActivate: [AuthGuard]},
+  {path: 'Cuestionario', component: CuestionarioComponent, canActivate: [AuthGuard,EstiloAsignadoGuard]},
+  {path: '**', redirectTo: 'Login'}
 
 ];
 

@@ -28,8 +28,9 @@ export class ActividadesDetallesComponent implements OnInit{
     this.route.paramMap.subscribe(params => {
       this.idActividad = +params.get('id')!; // Obtén el ID de la actividad
       console.log(this.idActividad); // ID de la actividad obtenido
+    
 
-      const usuarioNombre = this.Globales?.Usuario(); // Obtén el nombre del usuario
+      const usuarioNombre = this.Globales.Usuario(); // Obtén el nombre del usuario
 
       if (usuarioNombre) {
         this.obtenerUsuario(usuarioNombre);

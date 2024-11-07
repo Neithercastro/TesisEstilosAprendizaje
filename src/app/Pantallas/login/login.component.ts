@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Credenciales } from 'src/app/Models/Credenciales';
 import { AccesoService } from 'src/app/Services/AccesoService';
 import { GlobalesService } from 'src/app/Services/GlobalesServices';
+import { UsuarioService } from 'src/app/Services/UsuarioService';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { GlobalesService } from 'src/app/Services/GlobalesServices';
 export class LoginComponent implements OnInit {
 
   public Exito: boolean = true;
-  private Permiso: string = "";
+  private Estilo: string = "";
 
   DatosFormulario: Credenciales ={
     Usuario: '',
@@ -22,7 +23,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private Acceso: AccesoService,
-    public Globales: GlobalesService
+    public Globales: GlobalesService, 
+    private Usuario: UsuarioService
   ){}
 
   ngOnInit(): void {
@@ -32,6 +34,15 @@ export class LoginComponent implements OnInit {
   }
 
   Logearse (){
+    this.Usuario.Buscar(this.DatosFormulario.Usuario)
+    .subscribe({
+      next: data => {
+        if (data != null){
+          this.Estilo = data.nombreEstilo!;
+        }
+      }
+    })
+
     this.Acceso.Miembro(this.DatosFormulario)
     .subscribe(
       {
@@ -39,12 +50,14 @@ export class LoginComponent implements OnInit {
           if (Respuesta != null) {
             if(Respuesta.toString() == "Sin confirmar") {
               this.Exito = true;
-              this.Globales.IniciarSesion(Respuesta.toString(), this.Permiso, this.DatosFormulario.Usuario) 
+              this.Globales.IniciarSesion(Respuesta.toString(), this.Estilo, this.DatosFormulario.Usuario) 
               location.href = `/Cuestionario?Usuario=${this.DatosFormulario.Usuario}`;
             }
             else {
               this.Exito = true;
-              this.Globales.IniciarSesion(Respuesta.toString(), this.Permiso, this.DatosFormulario.Usuario) 
+              
+
+              this.Globales.IniciarSesion(Respuesta.toString(), this.Estilo, this.DatosFormulario.Usuario) 
               location.href = '/Home';
             }
           }

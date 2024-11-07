@@ -1,11 +1,18 @@
 <nav class="navbar">
 
-    <button class="Salir" (click)="cerrarSesion()"> 
-        <img src="../../../assets/Img/Salir.png">Salir
-    </button>
+    <div class="button-container">
+        <button class="Salir" (click)="cerrarSesion()"> 
+            <img src="../../../assets/Img/Salir.png" alt="Salir" />Salir
+        </button>
+
+        <button class="btn regresar-btn" (click)="regresar()">
+            <img src="../../../assets/Img/regresar.png" alt="Regresar" class="regresar-img"/>Regresar
+        </button>
+    </div>
+
 
     <div class="Estilo">
-        <span>{{usuario.nombreEstilo}}</span>
+        <span>{{Globales.ObtenerEstilo()}}</span>
     </div>
 
     <div class="user-info">

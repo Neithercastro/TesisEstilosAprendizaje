@@ -275,6 +275,7 @@ export class CuestionarioComponent implements OnInit {
       this.cuestionarioService.enviarRespuestas(userResponse).subscribe({
         next: response => {
           console.log('Respuesta del servidor:', response);
+
           location.href = '/Home'; // Redirigir a la página de inicio
           // Puedes mostrar un mensaje de éxito al usuario aquí
         },
