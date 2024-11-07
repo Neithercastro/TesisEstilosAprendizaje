@@ -3,6 +3,7 @@ import { Credenciales } from 'src/app/Models/Credenciales';
 import { AccesoService } from 'src/app/Services/AccesoService';
 import { GlobalesService } from 'src/app/Services/GlobalesServices';
 import { UsuarioService } from 'src/app/Services/UsuarioService';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,13 +19,14 @@ export class LoginComponent implements OnInit {
     Usuario: '',
     Contrasena: ''
   };
-  router: any;
+  
   
 
   constructor(
     private Acceso: AccesoService,
     public Globales: GlobalesService, 
-    private Usuario: UsuarioService
+    private Usuario: UsuarioService,
+    private router: Router
   ){}
 
   ngOnInit(): void {
@@ -41,14 +43,14 @@ export class LoginComponent implements OnInit {
           this.Estilo = data.nombreEstilo!;
         }
       }
-    })
+    });
 
     this.Acceso.Miembro(this.DatosFormulario)
     .subscribe(
       {
         next: Respuesta => {
           if (Respuesta != null) {
-            if(Respuesta.toString() == "SinConfirmar") {
+            if(Respuesta.toString() == "Sin confirmar") {
               this.Exito = true;
               this.Globales.IniciarSesion(Respuesta.toString(), this.Estilo, this.DatosFormulario.Usuario) 
               location.href = `/Cuestionario?Usuario=${this.DatosFormulario.Usuario}`;
@@ -66,7 +68,7 @@ export class LoginComponent implements OnInit {
         
       }
     );
-}
+  }
 
 DenegarAcceso() {
   this.Exito = false;

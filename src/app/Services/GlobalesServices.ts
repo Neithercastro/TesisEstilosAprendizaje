@@ -24,6 +24,11 @@ export class GlobalesService {
       this.router.navigate(['/Login']);  // Usamos router.navigate para redirigir sin recargar la página
     }
   
+    EliminarLocalSotorage(){
+      localStorage.removeItem('Token');
+      localStorage.removeItem('Estilo');
+      localStorage.removeItem('Usuario');
+    }
 
   Token() {
     return localStorage.getItem('Token');

@@ -8,6 +8,8 @@ import { UsuarioService } from 'src/app/Services/UsuarioService';
 import { GlobalesService } from 'src/app/Services/GlobalesServices';
 import { Usuario } from 'src/app/Models/Usuario';
 import { ActivatedRoute } from '@angular/router';
+import { AccesoService } from 'src/app/Services/AccesoService';
+import { Credenciales } from 'src/app/Models/Credenciales';
 
 interface Respuesta {
   texto: string;
@@ -28,7 +30,7 @@ export class CuestionarioComponent implements OnInit {
 
   cuestionarioForm!: FormGroup;
   usuario: string | null = null;
-
+  token: string = "";
   
 
   // Define tus preguntas y respuestas aquí (adaptar según tus necesidades)
@@ -202,11 +204,20 @@ export class CuestionarioComponent implements OnInit {
     private route: ActivatedRoute,
     private cuestionarioService: CuestionarioService,
     private UsuarioService: UsuarioService,
+    private Acceso: AccesoService,
     public Globales: GlobalesService
 
   ) {
     this.crearFormulario();
   }
+
+  DatosFormulario: Credenciales ={
+    Usuario: '',
+    Contrasena: ''
+  };
+
+  nombreEstilo: string = "";
+  user: string = "";
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -276,7 +287,35 @@ export class CuestionarioComponent implements OnInit {
         next: response => {
           console.log('Respuesta del servidor:', response);
 
-          location.href = '/Home'; // Redirigir a la página de inicio
+
+          
+          this.UsuarioService.Buscar(this.Globales.Usuario()!)
+          .subscribe({
+            next: data => {
+              if (data != null){
+                this.DatosFormulario.Usuario = data.usuario;
+                this.DatosFormulario.Contrasena = data.contrasena;
+                this.nombreEstilo = data.nombreEstilo!;
+                
+              }
+            }
+          });
+
+          this.Acceso.Miembro(this.DatosFormulario)
+    .subscribe(
+      {
+        next: Respuesta => {
+          if (Respuesta != null) {
+            this.Globales.IniciarSesion(Respuesta, this.nombreEstilo,this.DatosFormulario.Usuario);
+          }
+        },
+        error: Error => this.user
+        
+      }
+    );
+      
+
+          location.href = '/Login'; // Redirigir a la página de inicio
           // Puedes mostrar un mensaje de éxito al usuario aquí
         },
         error: error => {
