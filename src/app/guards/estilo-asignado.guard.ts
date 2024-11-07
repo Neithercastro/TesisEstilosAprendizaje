@@ -8,7 +8,7 @@ export const EstiloAsignadoGuard: CanActivateFn = () => {
   const router = inject(Router);
 
   // Verifica si el usuario tiene un estilo asignado
-  if (globalesService.TieneEstiloAsignado()) {
+  if (globalesService.ObtenerEstilo() !== "SinConfirmar") {
     // Si ya tiene estilo asignado, redirige al home
     router.navigate(['/Home']);
     return false;

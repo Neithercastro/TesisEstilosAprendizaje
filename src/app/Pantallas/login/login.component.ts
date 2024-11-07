@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
       {
         next: Respuesta => {
           if (Respuesta != null) {
-            if(Respuesta.toString() == "Sin confirmar") {
+            if(Respuesta.toString() == "SinConfirmar") {
               this.Exito = true;
               this.Globales.IniciarSesion(Respuesta.toString(), this.Estilo, this.DatosFormulario.Usuario) 
               location.href = `/Cuestionario?Usuario=${this.DatosFormulario.Usuario}`;
