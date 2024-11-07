@@ -10,7 +10,7 @@ import { Credenciales } from '../Models/Credenciales';
   })
   export class AccesoService {
     
-    private apiUrl = 'https://localhost:7195/api/Usuario/Validar';
+    private apiUrl = 'https://estilosaprendizaje-cxakfkgcf7a2bvd2.canadacentral-01.azurewebsites.net/api/Usuario/Validar';
     constructor(private http: HttpClient) { }
   
     Miembro(respuestas: Credenciales): Observable<any> {

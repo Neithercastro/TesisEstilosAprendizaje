@@ -8,7 +8,7 @@ import { Verificacion } from '../Models/Verificacion';
     providedIn: 'root'
   })
   export class VerificacionService {
-    private apiUrl = 'https://localhost:7195/api/Verificacion/Registrar'; // Cambia esto a tu URL real
+    private apiUrl = 'https://estilosaprendizaje-cxakfkgcf7a2bvd2.canadacentral-01.azurewebsites.net/api/Verificacion/Registrar'; // Cambia esto a tu URL real
   
     constructor(private http: HttpClient) { }
   

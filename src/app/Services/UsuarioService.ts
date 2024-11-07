@@ -20,7 +20,7 @@ interface UsuariosDTO {
     providedIn: 'root'
   })
   export class UsuarioService {
-    private apiUrl = 'https://localhost:7195/api/Usuario/Registrar'; // Cambia esto a tu URL real
+    private apiUrl = 'https://estilosaprendizaje-cxakfkgcf7a2bvd2.canadacentral-01.azurewebsites.net//api/Usuario/Registrar'; // Cambia esto a tu URL real
   
     constructor(private http: HttpClient) { }
 
@@ -42,7 +42,7 @@ interface UsuariosDTO {
     }
 
     Buscar(UsuarioUsuarios: string): Observable<Usuario> {
-      return this.http.get<Usuario>(`https://localhost:7195/api/Usuario/Buscar?UsuarioUsuarios=${UsuarioUsuarios}`)
+      return this.http.get<Usuario>(`https://estilosaprendizaje-cxakfkgcf7a2bvd2.canadacentral-01.azurewebsites.net//api/Usuario/Buscar?UsuarioUsuarios=${UsuarioUsuarios}`)
       .pipe(map((usuarioDTO: UsuariosDTO) => this.ConvertJSON(usuarioDTO)));
     }
   

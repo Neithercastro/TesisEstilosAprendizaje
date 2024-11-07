@@ -22,7 +22,7 @@ export interface ContenidoDetalleDTO {
   export class ContenidoDetalleService {
     constructor(private http: HttpClient) {}
 
-    private apiUrl = 'https://localhost:7195/api/ContenidoDetalle';
+    private apiUrl = 'https://estilosaprendizaje-cxakfkgcf7a2bvd2.canadacentral-01.azurewebsites.net/api/ContenidoDetalle';
 
     getContenidoDetalle( idActividad: number, idEstiloAprendizaje: number): Observable<ContenidoDetalleDTO[]>{
         

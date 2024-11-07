@@ -7,7 +7,7 @@ import { UserResponse } from '../Models/UserResponse';
   providedIn: 'root'
 })
 export class CuestionarioService {
-  private apiUrl = 'https://localhost:7195/api/EstiloAprendizaje'; // Cambia esto a tu URL real
+  private apiUrl = 'https://estilosaprendizaje-cxakfkgcf7a2bvd2.canadacentral-01.azurewebsites.net/api/EstiloAprendizaje'; // Cambia esto a tu URL real
 
   constructor(private http: HttpClient) { }
 

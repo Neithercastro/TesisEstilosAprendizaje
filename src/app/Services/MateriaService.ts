@@ -28,7 +28,7 @@ export interface MateriaDetalleDTO {
   })
   export class MateriaService {
     
-    private apiUrl = 'https://localhost:7195/api/Materias/semestre';
+    private apiUrl = 'https://estilosaprendizaje-cxakfkgcf7a2bvd2.canadacentral-01.azurewebsites.net/api/Materias/semestre';
     constructor(private http: HttpClient) { }
   
     ObtnerMateriaSemestre(semestre: number): Observable<Materia[]> {
@@ -36,10 +36,10 @@ export interface MateriaDetalleDTO {
       }
 
       getMateriasDetalle(id: number): Observable<MateriaDetalleDTO[]> {
-        return this.http.get<MateriaDetalleDTO[]>(`https://localhost:7195/api/Materias/${id}`);
+        return this.http.get<MateriaDetalleDTO[]>(`https://estilosaprendizaje-cxakfkgcf7a2bvd2.canadacentral-01.azurewebsites.net/api/Materias/${id}`);
       }
 
       getContenidoDetalle( idestilos: number,idActividad: number,): Observable<ContenidoDetalleDTO>{
-        return this.http.get<ContenidoDetalleDTO>(`https://localhost:7195/api/ContenidoDetalle/${idestilos}/${idActividad}`);
+        return this.http.get<ContenidoDetalleDTO>(`https://estilosaprendizaje-cxakfkgcf7a2bvd2.canadacentral-01.azurewebsites.net/api/ContenidoDetalle/${idestilos}/${idActividad}`);
       }
   }
