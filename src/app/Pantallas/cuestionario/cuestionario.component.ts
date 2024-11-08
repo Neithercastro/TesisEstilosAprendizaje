@@ -230,6 +230,8 @@ export class CuestionarioComponent implements OnInit {
     });
   }
 
+   
+
   buscarUsuario(usuario: string): void {
     this.UsuarioService.Buscar(usuario).subscribe({
       next: (usuarioData) => {
@@ -266,11 +268,24 @@ export class CuestionarioComponent implements OnInit {
     }
   }
 
+  // Función para verificar si todas las preguntas están respondidas
+  todasLasPreguntasRespondidas(): boolean {
+    return this.preguntasFormArray.controls.every((formArray: AbstractControl) => {
+      const formArrayTyped = formArray as FormArray;
+      return formArrayTyped.controls.length > 0;  // Verifica que haya al menos una respuesta
+    });
+  }
+/*
   guardarRespuestas(): void {
     const respuestas = this.preguntasFormArray.controls.map((formArray: AbstractControl) => {
       const formArrayTyped = formArray as FormArray;
       return formArrayTyped.controls.map(control => control.value);
-    }).flat();
+    }).flat();*/
+    guardarRespuestas(): void {
+      const respuestas = this.preguntasFormArray.controls.map((formArray: AbstractControl) => {
+        const formArrayTyped = formArray as FormArray;
+        return formArrayTyped.controls.map(control => control.value);
+      }).flat();
 
     this.UsuarioService.Buscar(this.Globales.Usuario()!)
   .subscribe({
@@ -287,35 +302,14 @@ export class CuestionarioComponent implements OnInit {
         next: response => {
           console.log('Respuesta del servidor:', response);
 
+          // Guardar el estilo de aprendizaje y la bandera en localStorage
+          const estiloAprendizaje = response.estilo;
+          const Token = response.token;
+          localStorage.setItem('Estilo', estiloAprendizaje);
+          localStorage.setItem('Token', Token);
+          localStorage.setItem('fromCuestionario', 'true');
 
-          
-          this.UsuarioService.Buscar(this.Globales.Usuario()!)
-          .subscribe({
-            next: data => {
-              if (data != null){
-                this.DatosFormulario.Usuario = data.usuario;
-                this.DatosFormulario.Contrasena = data.contrasena;
-                this.nombreEstilo = data.nombreEstilo!;
-                
-              }
-            }
-          });
-
-          this.Acceso.Miembro(this.DatosFormulario)
-    .subscribe(
-      {
-        next: Respuesta => {
-          if (Respuesta != null) {
-            this.Globales.IniciarSesion(Respuesta, this.nombreEstilo,this.DatosFormulario.Usuario);
-          }
-        },
-        error: Error => this.user
-        
-      }
-    );
-      
-
-          location.href = '/Login'; // Redirigir a la página de inicio
+          location.href = '/Home'; // Redirigir a la página de inicio
           // Puedes mostrar un mensaje de éxito al usuario aquí
         },
         error: error => {

@@ -4,6 +4,7 @@ import { Usuario } from 'src/app/Models/Usuario';
 import { GlobalesService } from 'src/app/Services/GlobalesServices';
 import { MateriaService } from 'src/app/Services/MateriaService';
 import { UsuarioService } from 'src/app/Services/UsuarioService';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
@@ -33,6 +34,24 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.cargarDatos();
+    const estiloAprendizaje = localStorage.getItem('Estilo');
+    const fromCuestionario = localStorage.getItem('fromCuestionario');
+
+    if (estiloAprendizaje && fromCuestionario === 'true') {
+      Swal.fire({
+        title: 'Estilo de aprendizaje identificado',
+        text: `Tu estilo de aprendizaje es: ${estiloAprendizaje}`,
+        icon: 'info',
+        confirmButtonText: 'Aceptar',
+        confirmButtonColor: '#3085d6',
+        background: '#f0f0f0',
+        color: '#333'
+    });
+        
+        // Limpiar los datos de localStorage para evitar que la alerta se muestre nuevamente
+        
+        localStorage.removeItem('fromCuestionario');
+    }
   }
 
   
