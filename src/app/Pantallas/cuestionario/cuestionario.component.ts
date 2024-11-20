@@ -167,7 +167,7 @@ export class CuestionarioComponent implements OnInit {
     },
     //////////////////////////// PREGUNTA 14 ////////////////////////////////
     {
-      enunciado: 'Ud. Prefiere que un maestro o conferencista que use:',
+      enunciado: 'Ud. Prefiere un maestro o conferencista que use:',
       respuestas: [
         {texto:'Demostraciones, modelos o sesiones prácticas.', valor : "Kinestesico"},
         {texto:'Folletos, libros o lecturas.', valor : "Textual"},
