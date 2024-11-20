@@ -19,6 +19,8 @@ body {
 
     .Texto {
         margin-left: 2.5%;
+        font-family: 'Arial';
+        margin-bottom: 15px;
     }
 
     h3 {
@@ -69,7 +71,8 @@ body {
 
     .form-group {
         margin-top: 4%;
-        margin-left:30%;
+        display:flex; 
+        justify-content:center;
     }
 
 

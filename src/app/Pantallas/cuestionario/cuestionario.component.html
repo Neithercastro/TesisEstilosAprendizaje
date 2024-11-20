@@ -2,22 +2,22 @@
 
     <div *ngIf="Globales.Token() != null" class="Principal">
       <div style="font-size: 35px;" class="Texto">Cuestionario VARK</div>
-      <div style="margin-bottom: 20px; font-size: 18px;" class="Texto">
-        Elija la respuesta que mejor explique su preferencia y haga clic en la casilla de al lado. Por favor, haga clic en más de una si una sola respuesta no se ajusta a su percepción. Deje en blanco cualquier pregunta que no aplique.
+      <div style="margin-bottom: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 18px;" class="Texto">
+        Elija la respuesta que mejor explique su preferencia y haga clic en la casilla de al lado. Por favor, haga clic en más de una si una sola respuesta no se ajusta a su percepción.
       </div>
   
       <div class="col">
         <!-- Utilizaremos un *ngFor para iterar sobre las preguntas -->
         <form class="Contenedor_Formas" [formGroup]="cuestionarioForm">
           <ng-container *ngFor="let pregunta of preguntas; let i = index">
-            <h3 style="font-family: Arial, Helvetica, sans-serif;">{{ i + 1 }}.- {{ pregunta.enunciado }}</h3>
+            <h3 style="font-family: Arial, Helvetica, sans-serif; font-size: 18px;">{{ i + 1 }}.- {{ pregunta.enunciado }}</h3>
             <div class="form-check" *ngFor="let respuesta of pregunta.respuestas; let j = index">
               <input 
                 class="form-check-input" 
                 type="checkbox" 
                 [id]="'Pregunta' + i + '_Resp' + j" 
                 (change)="onCheckboxChange($event, i, respuesta.valor)">
-              <label class="form-check-label" [for]="'Pregunta' + i + '_Resp' + j">{{ respuesta.texto }}</label>
+              <label style="font-family: Arial, Helvetica,  sans-serif; font-size: 17px;" class="form-check-label" [for]="'Pregunta' + i + '_Resp' + j">{{ respuesta.texto }}</label>
             </div>
           </ng-container>
           <div class="form-group">
