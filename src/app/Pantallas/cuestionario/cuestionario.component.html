@@ -10,7 +10,7 @@
         <!-- Utilizaremos un *ngFor para iterar sobre las preguntas -->
         <form class="Contenedor_Formas" [formGroup]="cuestionarioForm">
           <ng-container *ngFor="let pregunta of preguntas; let i = index">
-            <h3>{{ i + 1 }}.- {{ pregunta.enunciado }}</h3>
+            <h3 style="font-family: Arial, Helvetica, sans-serif;">{{ i + 1 }}.- {{ pregunta.enunciado }}</h3>
             <div class="form-check" *ngFor="let respuesta of pregunta.respuestas; let j = index">
               <input 
                 class="form-check-input" 
