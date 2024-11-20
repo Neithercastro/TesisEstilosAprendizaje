@@ -60,5 +60,12 @@ body {
         margin-bottom: 5%;
     }
 
+    .Boton_Enviar:disabled {
+        background-color: #FF6F91; /* Color más claro */
+        color: #FFFFFF; /* Mantén el texto blanco */
+        cursor: not-allowed; /* Cambia el cursor */
+        opacity: 0.65; /* Hace que se vea más tenue */
+    }
+
 
 

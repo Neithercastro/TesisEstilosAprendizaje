@@ -8,7 +8,7 @@
   
       <div class="col">
         <!-- Utilizaremos un *ngFor para iterar sobre las preguntas -->
-        <form class="Contenedor_Formas" [formGroup]="cuestionarioForm" (ngSubmit)="guardarRespuestas()">
+        <form class="Contenedor_Formas" [formGroup]="cuestionarioForm">
           <ng-container *ngFor="let pregunta of preguntas; let i = index">
             <h3>{{ i + 1 }}.- {{ pregunta.enunciado }}</h3>
             <div class="form-check" *ngFor="let respuesta of pregunta.respuestas; let j = index">
@@ -21,8 +21,9 @@
             </div>
           </ng-container>
           <div class="form-group">
-            <button type="submit" class="Boton_Enviar" (click)="guardarRespuestas()" [disabled]="!todasLasPreguntasRespondidas()"> ENVIAR </button>
+            <button type="submit" class="Boton_Enviar" [disabled]="!todasLasPreguntasRespondidas()" (click)="guardarRespuestas()" > ENVIAR </button>
           </div>
+          
         </form>
       </div>
       

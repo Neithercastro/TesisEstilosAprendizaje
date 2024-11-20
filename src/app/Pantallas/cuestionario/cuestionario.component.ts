@@ -39,10 +39,10 @@ export class CuestionarioComponent implements OnInit {
     {
       enunciado: 'Usted cocinará algo especial para su familia. Usted haría:',
       respuestas: [
-        {texto:'Preguntar a amigos por sugerencias', valor : "Auditivo"},
-        { texto: 'Dar una vista al recetario por ideas de las fotos', valor: 'Visual' },
-        { texto: 'Usar un libro de cocina donde usted sabe hay una buena receta', valor: 'Textual' },
-        { texto: 'Cocinar algo que usted sabe sin la necesidad de instrucciones', valor: 'Kinestesico' }
+        {texto:'Preguntar a amigos por sugerencias.', valor : "Auditivo"},
+        { texto: 'Dar una vista al recetario por ideas de las fotos.', valor: 'Visual' },
+        { texto: 'Usar un libro de cocina donde usted sabe hay una buena receta.', valor: 'Textual' },
+        { texto: 'Cocinar algo que usted sabe sin la necesidad de instrucciones.', valor: 'Kinestesico' }
       ]
     },
     ///////////////////// PREGUNTA 2 ///////////////////////////
@@ -69,8 +69,8 @@ export class CuestionarioComponent implements OnInit {
     {
       enunciado: 'Usted ha terminado una competencia o un examen y le gustaría tener alguna retroalimentación. Te gustaría retroalimentarte:',
       respuestas: [
-        {texto:'Usando descripciones escritas de los resultados', valor : "Textual"},
-        {texto:'Usando ejemplos de lo que usted ha hecho', valor : "Kinestesico"},
+        {texto:'Usando descripciones escritas de los resultados.', valor : "Textual"},
+        {texto:'Usando ejemplos de lo que usted ha hecho.', valor : "Kinestesico"},
         {texto:'Usando gráficos que muestran lo que usted ha logrado.', valor : "Visual"},
         {texto:'De alguien que habla por usted.', valor : "Auditivo"}
       ]
@@ -79,17 +79,17 @@ export class CuestionarioComponent implements OnInit {
     {
       enunciado: 'Usted tiene un problema con la rodilla. Usted preferiría que el doctor:',
       respuestas: [
-        {texto:'Use un modelo de plástico y te enseñe lo que está mal', valor : "Kinestesico"},
-        {texto:'Te de una página de internet o algo para leer', valor : "Textual"},
-        {texto:'Te describa lo qué está mal', valor : "Auditivo"},
-        {texto:'Te enseñe un diagrama lo que está mal', valor : "Visual"}
+        {texto:'Use un modelo de plástico y te enseñe lo que está mal.', valor : "Kinestesico"},
+        {texto:'Te de una página de internet o algo para leer.', valor : "Textual"},
+        {texto:'Te describa lo qué está mal.', valor : "Auditivo"},
+        {texto:'Te enseñe un diagrama lo que está mal.', valor : "Visual"}
       ]
     },
     //////////////////////////// PTRGUNTA 6 ////////////////////////////////
     {
       enunciado: 'Usted está a punto de comprar una cámara digital o teléfono o móvil. ¿Aparte del precio qué más influirá en tomar tu decisión?',
       respuestas: [
-        {texto:'Probándolo', valor : "Kinestesico"},
+        {texto:'Probándolo.', valor : "Kinestesico"},
         {texto:'Es un diseño moderno y se mira bien.', valor : "Visual"},
         {texto:'Leer los detalles acerca de sus características.', valor : "Textual"},
         {texto:'El vendedor me informa acerca de sus características.', valor : "Auditivo"}
@@ -110,14 +110,14 @@ export class CuestionarioComponent implements OnInit {
       enunciado: 'Me gustan páginas de Internet que tienen:',
       respuestas: [
         {texto:'Interesantes descripciones escritas, listas y explicaciones.', valor : "Textual"},
-        {texto:'Diseño interesante y características visuales', valor : "Visual"},
-        {texto:'Cosas que con un click pueda cambiar o examinar', valor : "Kinestesico"},
+        {texto:'Diseño interesante y características visuales.', valor : "Visual"},
+        {texto:'Cosas que con un click pueda cambiar o examinar.', valor : "Kinestesico"},
         {texto:'Canales donde puedo oír música, programas de radio o entrevistas.', valor : "Auditivo"}
       ]
     },
     ///////////////// PREGUNTA 9 /////////////////////
     {
-      enunciado: 'Usted cocinará algo especial para su familia. Usted haría:',
+      enunciado: 'Usted está planeando unas vacaciones para un grupo. Usted quiere alguna observación de ellos acerca del plan. Usted qué haría:',
       respuestas: [
         {texto:'Usa un mapa o página de Internet para mostrarles los lugares.', valor : "Visual"},
         {texto:'Describe algunos de los puntos sobresalientes.', valor : "Auditivo"},
@@ -152,27 +152,27 @@ export class CuestionarioComponent implements OnInit {
         {texto:'Va con la persona.', valor : "Kinestesico"},
         {texto:'Anote las direcciones en un papel (sin mapa).', valor : "Textual"},
         {texto:'Les dice las direcciones.', valor : "Auditivo"},
-        {texto:'Les dibuja un croquis o les da un mapa', valor : "Visual"}
+        {texto:'Les dibuja un croquis o les da un mapa.', valor : "Visual"}
       ]
     },
     ///////////////////////////////PREGUNTA 13 //////////////////////////
     {
       enunciado: 'Recuerde un momento en su vida en que Ud. aprendió a hacer algo nuevo. Trate de evitar escoger una destreza física, como andar en bicicleta. Ud. Aprendió mejor:',
       respuestas: [
-        {texto:'Demostraciones, modelos o sesiones prácticas.', valor : "Kinestesico"},
-        {texto:'Folletos, libros o lecturas', valor : "Textual"},
-        {texto:'Diagramas, esquemas o gráficos.', valor : "Auditivo"},
-        {texto:'Preguntas y respuestas, pláticas y oradores invitados.', valor : "Visual"}
+        {texto:'Viendo una demostración.', valor : "Kinestesico"},
+        {texto:'Con instrucciones escritas, en un manual o libro de texto.', valor : "Textual"},
+        {texto:'Escuchando a alguien explicarlo o haciendo preguntas.', valor : "Auditivo"},
+        {texto:'Con esquemas y diagramas o pistas visuales.', valor : "Visual"}
       ]
     },
-    //////////////////////////// PTRGUNTA 14 ////////////////////////////////
+    //////////////////////////// PREGUNTA 14 ////////////////////////////////
     {
-      enunciado: 'Ud. Prefiere que un maestro o conferencista use:',
+      enunciado: 'Ud. Prefiere que un maestro o conferencista que use:',
       respuestas: [
-        {texto:'Probándolo', valor : "Kinestesico"},
-        {texto:'Es un diseño moderno y se mira bien.', valor : "Textual"},
-        {texto:'Leer los detalles acerca de sus características.', valor : "Visual"},
-        {texto:'El vendedor me informa acerca de sus características.', valor : "Auditivo"}
+        {texto:'Demostraciones, modelos o sesiones prácticas.', valor : "Kinestesico"},
+        {texto:'Folletos, libros o lecturas.', valor : "Textual"},
+        {texto:'Diagramas, esquemas o gráficos.', valor : "Visual"},
+        {texto:'Preguntas y respuestas, pláticas y oradores invitados.', valor : "Auditivo"}
       ]
     },
     ///////////////////////////// PREGUNTA 15 ////////////////////////////
@@ -196,7 +196,6 @@ export class CuestionarioComponent implements OnInit {
       ]
     },
 
-    // ...agrega más preguntas aquí
   ];
 
   constructor(
@@ -269,18 +268,23 @@ export class CuestionarioComponent implements OnInit {
   }
 
   // Función para verificar si todas las preguntas están respondidas
+  /*
   todasLasPreguntasRespondidas(): boolean {
     return this.preguntasFormArray.controls.every((formArray: AbstractControl) => {
       const formArrayTyped = formArray as FormArray;
       return formArrayTyped.controls.length > 0;  // Verifica que haya al menos una respuesta
     });
-  }
-/*
-  guardarRespuestas(): void {
-    const respuestas = this.preguntasFormArray.controls.map((formArray: AbstractControl) => {
-      const formArrayTyped = formArray as FormArray;
-      return formArrayTyped.controls.map(control => control.value);
-    }).flat();*/
+  }*/
+    todasLasPreguntasRespondidas(): boolean {
+      const todasRespondidas = this.preguntasFormArray.controls.every((formArray: AbstractControl) => {
+        const formArrayTyped = formArray as FormArray;
+        return formArrayTyped.controls.length > 0; // Verifica que haya al menos una respuesta
+      });
+    
+      //console.log('Todas las preguntas respondidas:', todasRespondidas);
+      return todasRespondidas;
+    }
+    
     guardarRespuestas(): void {
       const respuestas = this.preguntasFormArray.controls.map((formArray: AbstractControl) => {
         const formArrayTyped = formArray as FormArray;
@@ -310,17 +314,14 @@ export class CuestionarioComponent implements OnInit {
           localStorage.setItem('fromCuestionario', 'true');
 
           location.href = '/Home'; // Redirigir a la página de inicio
-          // Puedes mostrar un mensaje de éxito al usuario aquí
         },
         error: error => {
           console.error('Error al enviar las respuestas:', error);
-          // Puedes mostrar un mensaje de error al usuario aquí
         }
       });
     },
     error: error => {
       console.error('Error al buscar el usuario:', error);
-      // Puedes mostrar un mensaje de error al usuario aquí
     }
   });
 
